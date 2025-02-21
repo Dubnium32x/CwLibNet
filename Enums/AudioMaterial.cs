@@ -1,5 +1,5 @@
 using System.Numerics;
-using CwLibNet.IO;
+using torutheredfox.craftworld.IO;
 using static CwLibNet.IO.ValueEnum<int>;
 
 namespace CwLibNet.Enums

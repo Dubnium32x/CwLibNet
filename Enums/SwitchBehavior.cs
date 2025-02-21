@@ -12,23 +12,26 @@ namespace CwLibNet.Enums
         DIRECTION,
         // ONE_SHOT(3)
         ONE_SHOT 
+    }
+    public sealed class SwitchBehaviorBody
+    {
+        private readonly SwitchBehavior value;
 
-        // --------------------
-        // TODO enum body members
-        // private final int value;
-        // SwitchBehavior(int value) {
-        //     this.value = value;
-        // }
-        // public Integer getValue() {
-        //     return this.value;
-        // }
-        // public static SwitchBehavior fromValue(int value) {
-        //     for (SwitchBehavior behavior : SwitchBehavior.values()) {
-        //         if (behavior.value == value)
-        //             return behavior;
-        //     }
-        //     return null;
-        // }
-        // --------------------
+        SwitchBehaviorBody(int value)
+        {
+            this.value = (SwitchBehavior)(value);
+        }
+
+        public SwitchBehavior getValue()
+        {
+            return this.value;
+        }
+
+        public static SwitchBehaviorBody fromValue(int value)
+        {
+            if (Enum.IsDefined(typeof(SwitchBehavior), value))
+                return new SwitchBehaviorBody(value);
+            return default(SwitchBehaviorBody);
+        }
     }
 }

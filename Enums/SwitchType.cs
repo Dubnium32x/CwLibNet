@@ -196,4 +196,26 @@ namespace CwLibNet.Enums
         // }
         // --------------------
     }
+
+    public sealed class SwitchBody
+    {
+        private readonly SwitchType value;
+
+        SwitchBody(int value)
+        {
+            this.value = (SwitchType)(value);
+        }
+
+        public SwitchType getValue()
+        {
+            return this.value;
+        }
+
+        public static SwitchBody fromValue(int value)
+        {
+            if (Enum.IsDefined(typeof(SwitchType), value))
+                return new SwitchBody(value);
+            return default(SwitchBody);
+        }
+    }
 }

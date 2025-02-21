@@ -27,4 +27,25 @@ namespace CwLibNet.Enums
         // }
         // --------------------
     }
+    public sealed class SwitchKeyBody
+    {
+        private readonly SwitchKeyType value;
+
+        SwitchKeyBody(int value)
+        {
+            this.value = (SwitchKeyType)(value);
+        }
+
+        public SwitchKeyType getValue()
+        {
+            return this.value;
+        }
+
+        public static SwitchKeyBody fromValue(int value)
+        {
+            if (Enum.IsDefined(typeof(SwitchKeyType), value))
+                return new SwitchKeyBody(value);
+            return default(SwitchKeyBody);
+        }
+    }
 }

@@ -33,4 +33,25 @@ namespace CwLibNet.Enums
         // }
         // --------------------
     }
+    public sealed class SwitchLogicBody
+    {
+        private readonly SwitchLogicType value;
+
+        SwitchLogicBody(int value)
+        {
+            this.value = (SwitchLogicType)(value);
+        }
+
+        public SwitchLogicType getValue()
+        {
+            return this.value;
+        }
+
+        public static SwitchLogicBody fromValue(int value)
+        {
+            if (Enum.IsDefined(typeof(SwitchLogicType), value))
+                return new SwitchLogicBody(value);
+            return default(SwitchLogicBody);
+        }
+    }
 }

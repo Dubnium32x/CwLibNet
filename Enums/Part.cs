@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using Cwlib.Io.Serializer;
@@ -319,7 +320,7 @@ namespace CwLibNet.Enums
         [SuppressMessage("unchecked", "RedundantCast")]
         public bool Serialize(SerializableAttribute[] parts, int version, long flags, Serializer serializer)
         {
-            if (!this.hasPart(serializer.GetRevision().GetHead(), flags, version))
+            if (!this.hasPart(serializer.getRevision().GetHead(), flags, version))
                 return true;
 
             Part part = (Part)parts[this.index];

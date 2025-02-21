@@ -127,4 +127,26 @@ namespace CwLibNet.Enums
         // }
         // --------------------
     }
+
+    public sealed class TutorialBody
+    {
+        private readonly TutorialLevel value;
+
+        TutorialBody(int value)
+        {
+            this.value = (TutorialLevel)(value);
+        }
+
+        public TutorialLevel getValue()
+        {
+            return this.value;
+        }
+
+        public static TutorialBody fromValue(int value)
+        {
+            if (Enum.IsDefined(typeof(TutorialLevel), value))
+                return new TutorialBody(value);
+            return default(TutorialBody);
+        }
+    }
 }

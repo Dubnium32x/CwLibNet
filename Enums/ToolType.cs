@@ -123,4 +123,26 @@ namespace CwLibNet.Enums
         // }
         // --------------------
     }
+
+    public sealed class ToolBody
+    {
+        private readonly ToolType value;
+
+        ToolBody(int value)
+        {
+            this.value = (ToolType)(value);
+        }
+
+        public ToolType getValue()
+        {
+            return this.value;
+        }
+
+        public static ToolBody fromValue(int value)
+        {
+            if (Enum.IsDefined(typeof(ToolType), value))
+                return new ToolBody(value);
+            return default(ToolBody);
+        }
+    }
 }

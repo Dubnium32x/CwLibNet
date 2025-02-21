@@ -33,4 +33,25 @@ namespace CwLibNet.Enums
         // }
         // --------------------
     }
+    public sealed class TriggerBody
+    {
+        private readonly TriggerType value;
+
+        TriggerBody(int value)
+        {
+            this.value = (TriggerType)(value);
+        }
+
+        public TriggerType getValue()
+        {
+            return this.value;
+        }
+
+        public static TriggerBody fromValue(int value)
+        {
+            if (Enum.IsDefined(typeof(TriggerType), value))
+                return new TriggerBody(value);
+            return default(TriggerBody);
+        }
+    }
 }

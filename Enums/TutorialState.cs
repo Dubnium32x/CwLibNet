@@ -31,4 +31,26 @@ namespace CwLibNet.Enums
         // }
         // --------------------
     }
+
+    public sealed class TutorialStateBody
+    {
+        private readonly TutorialState value;
+
+        TutorialStateBody(int value)
+        {
+            this.value = (TutorialState)(value);
+        }
+
+        public TutorialState getValue()
+        {
+            return this.value;
+        }
+
+        public static TutorialStateBody fromValue(int value)
+        {
+            if (Enum.IsDefined(typeof(TutorialState), value))
+                return new TutorialStateBody(value);
+            return default(TutorialStateBody);
+        }
+    }
 }
