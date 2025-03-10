@@ -1,4 +1,4 @@
-namespace torutheredfox.craftworlds.Enums
+namespace CwLibNet.Enums
 {
     public enum ArchiveType
     {
